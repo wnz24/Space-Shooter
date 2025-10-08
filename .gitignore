@@ -1,0 +1,88 @@
+# ===================================
+# Unity generated folders
+# ===================================
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+UserSettings/
+
+# ===================================
+# Visual Studio generated files
+# ===================================
+.vs/
+.vscode/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# ===================================
+# Operating system files
+# ===================================
+.DS_Store
+.DS_Store?
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ===================================
+# Unity auto-generated / cache data
+# ===================================
+sysinfo.txt
+*.stackdump
+*.crash
+*.dmp
+*.log
+*.nps
+*.trace
+
+# ===================================
+# Unity build outputs
+# ===================================
+/Build/
+/build/
+/Builds/
+/builds/
+/[Oo]utput/
+
+# ===================================
+# Asset Store / Package Manager
+# ===================================
+/Assets/AssetStoreTools*
+Packages/packages-lock.json
+
+# ===================================
+# Local configuration
+# ===================================
+*.local
+*.env
+.env*
+
+# ===================================
+# Unity Collaborate (legacy)
+# ===================================
+.CollabMetadata/
+.collabignore
+
+# ===================================
+# Other temporary files
+# ===================================
+*.orig
+*.tmp
+*.bak
+*.old
+*.swp
