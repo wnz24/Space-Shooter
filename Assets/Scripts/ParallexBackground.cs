@@ -6,6 +6,7 @@ public class ParallexBackground : MonoBehaviour
     
     [SerializeField] private float moveSpeed;
     float width;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

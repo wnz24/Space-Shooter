@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     Vector2 movement;
     Animator animator;
-    [SerializeField] float moveSpeed = 5f;
+    //[SerializeField] float moveSpeed = 5f;
     public float boost = 1f;
     private float boostSpeed = 5f;
     [SerializeField] private float energy;
