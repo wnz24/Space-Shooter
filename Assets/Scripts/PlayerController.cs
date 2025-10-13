@@ -13,6 +13,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float energy;
     [SerializeField] private float Maxenergy;
     [SerializeField] private float energyRegen;
+
+    [SerializeField] private float health;
+    [SerializeField] private float Maxhealth;
+
     private bool boosting = false;
 
     private void Awake()
@@ -35,6 +39,8 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         energy = Maxenergy;
         UIController.Instance.SetMaxEnergy(energy, Maxenergy);
+        health = Maxhealth;
+        UIController.Instance.SetMaxHealth(health, Maxhealth);
     }
 
 
@@ -88,4 +94,29 @@ public class PlayerController : MonoBehaviour
         boost = 1f;
         boosting = false;
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+     if(collision.gameObject.CompareTag("Obstacle"))
+        {
+            TakeDamage(1);
+            //health -= 10f;
+            //UIController.Instance.SetMaxHealth(health, Maxhealth);
+            //if(health <= 0)
+            //{
+            //    GameManager.Instance.GameOver();
+            //}
+        }
+    }
+
+    private void TakeDamage(float damage)
+    {
+        health -= damage;
+        UIController.Instance.SetMaxHealth(health, Maxhealth);
+        if (health <= 0)
+        {
+            boost = 1f;
+            gameObject.SetActive(false);
+        }
+    }   
 }

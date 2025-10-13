@@ -5,8 +5,11 @@ using TMPro;
 public class UIController : MonoBehaviour
 {
     public static UIController Instance;    
-   [SerializeField]  private Slider slider;
-    [SerializeField] private  TMP_Text text;
+   [SerializeField]  private Slider energyslider;
+    [SerializeField] private  TMP_Text energytext;
+
+   [SerializeField]  private Slider Healthslider;
+    [SerializeField] private  TMP_Text healthtext;
 
     private void Awake()
     {
@@ -21,9 +24,16 @@ public class UIController : MonoBehaviour
     }
     public void SetMaxEnergy(float energy, float max)
     {
-        slider.maxValue = max;
-        slider.value = Mathf.Round(energy);
-        text.text = Mathf.Round(energy) + " / " + max;
+        energyslider.maxValue = max;
+        energyslider.value = Mathf.Round(energy);
+        energytext.text = Mathf.Round(energy) + " / " + max;
+
+    }
+    public void SetMaxHealth(float energy, float max)
+    {
+        Healthslider.maxValue = max;
+        Healthslider.value = Mathf.Round(energy);
+        healthtext.text = Mathf.Round(energy) + " / " + max;
 
     }
 }
