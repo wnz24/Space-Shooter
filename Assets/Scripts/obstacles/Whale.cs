@@ -2,15 +2,18 @@ using UnityEngine;
 
 public class Whale : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+
 
     // Update is called once per frame
     void Update()
     {
-        
+        float moveX = (GameManager.Instance.worldSpeed * PlayerController.Instance.boost) * Time.deltaTime;
+        transform.position += new Vector3(moveX, 0);
+        if (transform.position.x < -12)
+        {
+            Destroy(gameObject);
+        }
+
     }
 }
+
