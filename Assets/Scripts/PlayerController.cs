@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     //[SerializeField] float moveSpeed = 5f;
     public float boost = 1f;
-    private float boostSpeed = 5f;
+    private float boostSpeed = 6f;
     [SerializeField] private float energy;
     [SerializeField] private float Maxenergy;
     [SerializeField] private float energyRegen;
