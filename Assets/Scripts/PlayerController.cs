@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float health;
     [SerializeField] private float Maxhealth;
 
+    public GameObject DestroyEffect;
+
     private bool boosting = false;
 
     private void Awake()
@@ -115,8 +117,9 @@ public class PlayerController : MonoBehaviour
         UIController.Instance.SetMaxHealth(health, Maxhealth);
         if (health <= 0)
         {
-            boost = 1f;
+            boost = 0f;
             gameObject.SetActive(false);
+            Instantiate(DestroyEffect,transform.position, transform.rotation);
         }
     }   
 }
