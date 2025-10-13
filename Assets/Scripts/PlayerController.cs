@@ -48,20 +48,23 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-
-        float moveX = Input.GetAxisRaw("Horizontal");
-        float moveY = Input.GetAxisRaw("Vertical");
-        animator.SetFloat("moveX", moveX);
-        animator.SetFloat("moveY", moveY);
-        movement = new Vector2(moveX, moveY);
-
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire2"))
+        if(Time.timeScale > 0)
         {
-            OnBoostEnter();
-        }
-        else if (Input.GetKeyUp(KeyCode.Space) || Input.GetButtonUp("Fire2"))
-        {
-            OnBoostExit();
+
+            float moveX = Input.GetAxisRaw("Horizontal");
+            float moveY = Input.GetAxisRaw("Vertical");
+            animator.SetFloat("moveX", moveX);
+            animator.SetFloat("moveY", moveY);
+            movement = new Vector2(moveX, moveY);
+
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire2"))
+            {
+                OnBoostEnter();
+            }
+            else if (Input.GetKeyUp(KeyCode.Space) || Input.GetButtonUp("Fire2"))
+            {
+                OnBoostExit();
+            }
         }
     }
     private void FixedUpdate()
@@ -90,7 +93,7 @@ public class PlayerController : MonoBehaviour
 
         }
     }
-    private void OnBoostExit()
+    public void OnBoostExit()
     {
         animator.SetBool("boosting", false);
         boost = 1f;
