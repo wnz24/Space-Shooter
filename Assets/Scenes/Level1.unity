@@ -144,7 +144,7 @@ Transform:
   m_GameObject: {fileID: 117498193}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.41, y: 5, z: 0}
+  m_LocalPosition: {x: 10.41, y: 3.89, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -897,7 +897,7 @@ Transform:
   m_GameObject: {fileID: 485488268}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.25, y: -5, z: 0}
+  m_LocalPosition: {x: 10.25, y: -4.44, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1009,9 +1009,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ObjectSpawner
   minPos: {fileID: 117498194}
   maxPos: {fileID: 485488269}
-  prefab: {fileID: 534767040648829107, guid: ba1084da53d5b9b4b8fdf99c04552345, type: 3}
-  spawnInterval: 1
-  spawnTime: 0
+  waveNumber: 0
+  waves:
+  - prefab: {fileID: 5661209847162595448, guid: 4ab5eb466d8091147a0055a8618a703e, type: 3}
+    spawnInterval: 1
+    spawnTime: 0
+    objectsPerWave: 5
+    spawnedObjectCount: 0
+  - prefab: {fileID: 534767040648829107, guid: ba1084da53d5b9b4b8fdf99c04552345, type: 3}
+    spawnInterval: 1.5
+    spawnTime: 0
+    objectsPerWave: 3
+    spawnedObjectCount: 0
 --- !u!4 &551911537
 Transform:
   m_ObjectHideFlags: 0
