@@ -92,6 +92,7 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("boosting", true);
         boost = boostSpeed;
         boosting = true;
+            AudioManager.Instance.PlaySound(AudioManager.Instance.fire);
 
         }
     }
@@ -107,12 +108,7 @@ public class PlayerController : MonoBehaviour
      if(collision.gameObject.CompareTag("Obstacle"))
         {
             TakeDamage(1);
-            //health -= 10f;
-            //UIController.Instance.SetMaxHealth(health, Maxhealth);
-            //if(health <= 0)
-            //{
-            //    GameManager.Instance.GameOver();
-            //}
+           
         }
     }
 
@@ -120,11 +116,14 @@ public class PlayerController : MonoBehaviour
     {
         health -= damage;
         UIController.Instance.SetMaxHealth(health, Maxhealth);
+        AudioManager.Instance.PlaySound(AudioManager.Instance.hit);
+
         if (health <= 0)
         {
             boost = 0f;
             gameObject.SetActive(false);
             Instantiate(DestroyEffect,transform.position, transform.rotation);
+            AudioManager.Instance.PlaySound(AudioManager.Instance.ice);
             GameManager.Instance.GameOver();
         }
     }   

@@ -29,11 +29,15 @@ public class GameManager : MonoBehaviour
     {
         if(UIController.Instance.pausepanel.activeSelf)
         {
+            AudioManager.Instance.PlaySound(AudioManager.Instance.unpause);
+
             Time.timeScale = 1f;
             UIController.Instance.pausepanel.SetActive(false);
         }
         else
         {
+            AudioManager.Instance.PlaySound(AudioManager.Instance.pause);
+
             Time.timeScale = 0f;
             UIController.Instance.pausepanel.SetActive(true);
             PlayerController.Instance.OnBoostExit();
