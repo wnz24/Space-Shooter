@@ -79,8 +79,10 @@ public class PlayerController : MonoBehaviour
         {
             if (energy < Maxenergy) energy += energyRegen;
         }
-        UIController.Instance.SetMaxEnergy(energy, Maxenergy);
-
+        if (UIController.Instance != null)
+        {
+            UIController.Instance.SetMaxEnergy(energy, Maxenergy);
+        }
     }
 
     private void OnBoostEnter()
@@ -123,6 +125,7 @@ public class PlayerController : MonoBehaviour
             boost = 0f;
             gameObject.SetActive(false);
             Instantiate(DestroyEffect,transform.position, transform.rotation);
+            GameManager.Instance.GameOver();
         }
     }   
 }

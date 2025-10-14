@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
@@ -25,16 +25,23 @@ public class UIController : MonoBehaviour
     }
     public void SetMaxEnergy(float energy, float max)
     {
+        // Null checks to prevent MissingReferenceException
+        if (energyslider == null || energytext == null)
+            return;
+
         energyslider.maxValue = max;
         energyslider.value = Mathf.Round(energy);
         energytext.text = Mathf.Round(energy) + " / " + max;
-
     }
+
     public void SetMaxHealth(float energy, float max)
     {
+        //Null checks for safety
+        if (Healthslider == null || healthtext == null)
+            return;
+
         Healthslider.maxValue = max;
         Healthslider.value = Mathf.Round(energy);
         healthtext.text = Mathf.Round(energy) + " / " + max;
-
     }
 }

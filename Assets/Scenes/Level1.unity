@@ -1625,6 +1625,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Quit Button
       objectReference: {fileID: 0}
+    - target: {fileID: 5918807260176323128, guid: 56ee785f453777549a8d8a8c9018e685, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5918807260176323128, guid: 56ee785f453777549a8d8a8c9018e685, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5918807260176323128, guid: 56ee785f453777549a8d8a8c9018e685, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 253834724}
+    - target: {fileID: 5918807260176323128, guid: 56ee785f453777549a8d8a8c9018e685, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5918807260176323128, guid: 56ee785f453777549a8d8a8c9018e685, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Quit
+      objectReference: {fileID: 0}
+    - target: {fileID: 5918807260176323128, guid: 56ee785f453777549a8d8a8c9018e685, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5918807260176323128, guid: 56ee785f453777549a8d8a8c9018e685, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2193,7 +2221,7 @@ MonoBehaviour:
   Maxenergy: 50
   energyRegen: 0.2
   health: 0
-  Maxhealth: 10
+  Maxhealth: 2
   DestroyEffect: {fileID: 1262408252906619621, guid: 90af56dded61e254aa04cd64b7ba8eb8, type: 3}
 --- !u!58 &1512237141
 CircleCollider2D:
@@ -2739,6 +2767,34 @@ PrefabInstance:
     - target: {fileID: 4807569016659527354, guid: 56ee785f453777549a8d8a8c9018e685, type: 3}
       propertyPath: m_Name
       value: Main Menu Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 5918807260176323128, guid: 56ee785f453777549a8d8a8c9018e685, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5918807260176323128, guid: 56ee785f453777549a8d8a8c9018e685, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5918807260176323128, guid: 56ee785f453777549a8d8a8c9018e685, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 253834724}
+    - target: {fileID: 5918807260176323128, guid: 56ee785f453777549a8d8a8c9018e685, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5918807260176323128, guid: 56ee785f453777549a8d8a8c9018e685, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5918807260176323128, guid: 56ee785f453777549a8d8a8c9018e685, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5918807260176323128, guid: 56ee785f453777549a8d8a8c9018e685, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
