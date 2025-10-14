@@ -1379,12 +1379,17 @@ MonoBehaviour:
   - prefab: {fileID: 5661209847162595448, guid: 4ab5eb466d8091147a0055a8618a703e, type: 3}
     spawnInterval: 1
     spawnTime: 0
-    objectsPerWave: 5
+    objectsPerWave: 10
     spawnedObjectCount: 0
-  - prefab: {fileID: 534767040648829107, guid: ba1084da53d5b9b4b8fdf99c04552345, type: 3}
-    spawnInterval: 1.5
+  - prefab: {fileID: 534767040648829107, guid: ad8eabc66bae41040915103e5769a6c5, type: 3}
+    spawnInterval: 5
     spawnTime: 0
-    objectsPerWave: 3
+    objectsPerWave: 1
+    spawnedObjectCount: 0
+  - prefab: {fileID: 5661209847162595448, guid: 4ab5eb466d8091147a0055a8618a703e, type: 3}
+    spawnInterval: 1
+    spawnTime: 0
+    objectsPerWave: 10
     spawnedObjectCount: 0
 --- !u!4 &551911537
 Transform:
@@ -2077,7 +2082,7 @@ GameObject:
   - component: {fileID: 1512237141}
   m_Layer: 6
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2221,7 +2226,7 @@ MonoBehaviour:
   Maxenergy: 50
   energyRegen: 0.2
   health: 0
-  Maxhealth: 2
+  Maxhealth: 5
   DestroyEffect: {fileID: 1262408252906619621, guid: 90af56dded61e254aa04cd64b7ba8eb8, type: 3}
 --- !u!58 &1512237141
 CircleCollider2D:
