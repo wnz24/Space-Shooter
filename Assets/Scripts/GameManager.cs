@@ -38,4 +38,11 @@ public class GameManager : MonoBehaviour
             PlayerController.Instance.OnBoostExit();
         }
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
+        
+    
 }
