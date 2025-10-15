@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Experimental.Animations;
 
@@ -7,6 +8,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     Vector2 movement;
     Animator animator;
+    SpriteRenderer spriteRenderer;
     //[SerializeField] float moveSpeed = 5f;
     public float boost = 1f;
     private float boostSpeed = 6f;
@@ -16,6 +18,9 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private float health;
     [SerializeField] private float Maxhealth;
+
+     private Material defaultMaterial;
+    [SerializeField] private Material Material;
 
     public GameObject DestroyEffect;
 
@@ -39,10 +44,12 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         energy = Maxenergy;
         UIController.Instance.SetMaxEnergy(energy, Maxenergy);
         health = Maxhealth;
         UIController.Instance.SetMaxHealth(health, Maxhealth);
+         defaultMaterial=spriteRenderer.material;
     }
 
 
@@ -64,6 +71,11 @@ public class PlayerController : MonoBehaviour
             else if (Input.GetKeyUp(KeyCode.Space) || Input.GetButtonUp("Fire2"))
             {
                 OnBoostExit();
+            }
+
+            if (Input.GetKeyDown(KeyCode.RightShift) || Input.GetButtonDown("Fire1"))
+            {
+                PhaserWeapon.Instance.Shoot();  
             }
         }
     }
@@ -117,7 +129,8 @@ public class PlayerController : MonoBehaviour
         health -= damage;
         UIController.Instance.SetMaxHealth(health, Maxhealth);
         AudioManager.Instance.PlaySound(AudioManager.Instance.hit);
-
+        spriteRenderer.material = Material;
+        StartCoroutine(changematerial());
         if (health <= 0)
         {
             boost = 0f;
@@ -126,5 +139,10 @@ public class PlayerController : MonoBehaviour
             AudioManager.Instance.PlaySound(AudioManager.Instance.ice);
             GameManager.Instance.GameOver();
         }
-    }   
+    }  
+   IEnumerator changematerial()
+    {
+        yield return new WaitForSeconds(0.2f);
+        spriteRenderer.material = defaultMaterial;
+    }
 }

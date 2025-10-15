@@ -1,3 +1,5 @@
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Asteroid : MonoBehaviour
@@ -5,11 +7,14 @@ public class Asteroid : MonoBehaviour
    private SpriteRenderer spriteRenderer;
     [SerializeField] private Sprite[] sprites;
     Rigidbody2D rb;
-
+    private Material defaultMaterial;
+    [SerializeField] private Material Material;
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        rb = GetComponent<Rigidbody2D>();   
+        rb = GetComponent<Rigidbody2D>();
+        defaultMaterial = spriteRenderer.material;
+
         if (sprites == null || sprites.Length == 0)
         {
             Debug.LogError("No sprites assigned to Asteroid!");
@@ -33,5 +38,19 @@ public class Asteroid : MonoBehaviour
             Destroy(gameObject);
         }
 
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Bullet"))       {
+            spriteRenderer.material = Material;
+            StartCoroutine(changematerial());
+            
+        }
+    }
+    IEnumerator changematerial()
+    {
+        yield return new WaitForSeconds(0.2f);
+        spriteRenderer.material = defaultMaterial;
     }
 }
