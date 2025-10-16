@@ -10,8 +10,8 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     SpriteRenderer spriteRenderer;
     //[SerializeField] float moveSpeed = 5f;
-    public float boost = 1f;
-    private float boostSpeed = 6f;
+    public float boost = 2f;
+    private float boostSpeed = 4f;
     [SerializeField] private float energy;
     [SerializeField] private float Maxenergy;
     [SerializeField] private float energyRegen;
@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
 
      private Material defaultMaterial;
     [SerializeField] private Material Material;
+    [SerializeField] private ParticleSystem EngineEffect;
+
 
     public GameObject DestroyEffect;
 
@@ -101,11 +103,11 @@ public class PlayerController : MonoBehaviour
     {
         if(energy > 10f)
         {
-        animator.SetBool("boosting", true);
-        boost = boostSpeed;
-        boosting = true;
             AudioManager.Instance.PlaySound(AudioManager.Instance.fire);
-
+            animator.SetBool("boosting", true);
+            boost = boostSpeed;
+            boosting = true;
+            EngineEffect.Play();
         }
     }
     public void OnBoostExit()
