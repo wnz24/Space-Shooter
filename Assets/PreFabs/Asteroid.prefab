@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 5661209847162595448}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.2, y: 0.11511457, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -54,6 +54,8 @@ MonoBehaviour:
   - {fileID: 596752082, guid: 3cadc6e1d234727408d059ab47374c52, type: 3}
   - {fileID: 1235255850, guid: 3cadc6e1d234727408d059ab47374c52, type: 3}
   Material: {fileID: 2100000, guid: 79d60d9d7b75a8c4f9432d7c054a5a8f, type: 2}
+  DestroyEffect: {fileID: 1047522593388578512, guid: b41a028fb12e8fa4b890949194d38417, type: 3}
+  lifes: 5
 --- !u!212 &8362923485158810115
 SpriteRenderer:
   m_ObjectHideFlags: 0

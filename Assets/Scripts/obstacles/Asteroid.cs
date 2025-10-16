@@ -9,6 +9,8 @@ public class Asteroid : MonoBehaviour
     Rigidbody2D rb;
     private Material defaultMaterial;
     [SerializeField] private Material Material;
+    [SerializeField] private GameObject DestroyEffect;
+    [SerializeField] public int lifes;
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -47,7 +49,13 @@ public class Asteroid : MonoBehaviour
             spriteRenderer.material = Material;
             StartCoroutine(changematerial());
             AudioManager.Instance.PlaySound(AudioManager.Instance.hitRock);
-
+            lifes--;
+                        if (lifes <= 0)
+            {
+               Instantiate(DestroyEffect, transform.position, transform.rotation);
+                AudioManager.Instance.PlayModifiedSound(AudioManager.Instance.boom2);
+                Destroy(gameObject);
+            }
         }
     }
     IEnumerator changematerial()
