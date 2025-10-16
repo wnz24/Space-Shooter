@@ -3,7 +3,7 @@ using UnityEngine;
 public class PhaserWeapon : MonoBehaviour
 {
     public static PhaserWeapon Instance;
-    [SerializeField] private GameObject prefab;
+    [SerializeField] private ObjectPooller BulletPool;
 
     public float speed;
     public int damage;
@@ -22,7 +22,9 @@ public class PhaserWeapon : MonoBehaviour
 
     public void Shoot()
     {
-        Instantiate(prefab, transform.position, Quaternion.identity);
+       GameObject bullet =  BulletPool.GetObject();
+         bullet.transform.position = transform.position; 
+        bullet.SetActive(true);  
 
     }
 }
