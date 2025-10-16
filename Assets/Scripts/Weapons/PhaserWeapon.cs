@@ -22,8 +22,10 @@ public class PhaserWeapon : MonoBehaviour
 
     public void Shoot()
     {
+       
        GameObject bullet =  BulletPool.GetObject();
-         bullet.transform.position = transform.position; 
+        AudioManager.Instance.PlayModifiedSound(AudioManager.Instance.shoot);
+        bullet.transform.position = transform.position; 
         bullet.SetActive(true);  
 
     }

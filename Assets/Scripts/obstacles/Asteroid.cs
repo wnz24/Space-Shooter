@@ -26,7 +26,8 @@ public class Asteroid : MonoBehaviour
         float moveY = Random.Range(-1f, 1f);
 
         rb.linearVelocity = new Vector2(moveX, moveY).normalized;
-
+        float scale = Random.Range(0.3f, 1.5f);
+        transform.localScale = new Vector3(scale, scale);    
     }
 
     // Update is called once per frame
@@ -42,10 +43,11 @@ public class Asteroid : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Bullet"))       {
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Bullet")) {
             spriteRenderer.material = Material;
             StartCoroutine(changematerial());
-            
+            AudioManager.Instance.PlaySound(AudioManager.Instance.hitRock);
+
         }
     }
     IEnumerator changematerial()
