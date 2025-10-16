@@ -52,6 +52,7 @@ MonoBehaviour:
   - {fileID: 1057029299, guid: f18027395ca3f5c4286a9c028acec2f4, type: 3}
   - {fileID: -560486364, guid: f18027395ca3f5c4286a9c028acec2f4, type: 3}
   - {fileID: 1494056915, guid: f18027395ca3f5c4286a9c028acec2f4, type: 3}
+  zappedEffect: {fileID: 2914219944705777547, guid: fef230bce1ffa654495f9e7b4535b4cf, type: 3}
 --- !u!212 &2015639662923621572
 SpriteRenderer:
   m_ObjectHideFlags: 0

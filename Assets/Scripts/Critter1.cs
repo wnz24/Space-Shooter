@@ -11,6 +11,7 @@ public class Critter1 : MonoBehaviour
 
     private float moveTimer;
     private float moveInterval;
+   [SerializeField] private GameObject zappedEffect;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -51,5 +52,17 @@ public class Critter1 : MonoBehaviour
         float RandomX = Random.Range(-5f, 5f);
         float RandomY = Random.Range(-5f, 5f);
         targetPosition = new Vector2(RandomX, RandomY);
+    }
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if( collision.gameObject.CompareTag("Bullet"))
+        {
+            AudioManager.Instance.PlayModifiedSound(AudioManager.Instance.critterhit);
+            Instantiate(zappedEffect, transform.position, transform.rotation);
+        Destroy(gameObject);
+           
+        }
     }
 }
