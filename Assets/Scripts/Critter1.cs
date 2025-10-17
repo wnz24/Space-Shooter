@@ -45,6 +45,11 @@ public class Critter1 : MonoBehaviour
 
         float moveX = (GameManager.Instance.worldSpeed * PlayerController.Instance.boost) * Time.deltaTime;
         transform.position += new Vector3(moveX, 0);
+
+        if (transform.position.x < -10)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void GenerateRandomPositions()
