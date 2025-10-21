@@ -12,6 +12,7 @@ public class Critter1 : MonoBehaviour
     private float moveTimer;
     private float moveInterval;
    [SerializeField] private GameObject zappedEffect;
+   [SerializeField] private GameObject BurnedEffect;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -67,7 +68,15 @@ public class Critter1 : MonoBehaviour
             AudioManager.Instance.PlayModifiedSound(AudioManager.Instance.critterhit);
             Instantiate(zappedEffect, transform.position, transform.rotation);
         Destroy(gameObject);
-           
+            GameManager.Instance.crittercount++;
+
+        }
+        else if (collision.gameObject.CompareTag("Player"))
+        {
+            AudioManager.Instance.PlayModifiedSound(AudioManager.Instance.critterburn);
+            Instantiate(BurnedEffect, transform.position, transform.rotation);
+            Destroy(gameObject);
+            GameManager.Instance.crittercount++;
         }
     }
 }

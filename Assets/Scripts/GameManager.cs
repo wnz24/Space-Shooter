@@ -4,8 +4,9 @@ using System.Collections;
 public class GameManager : MonoBehaviour
 {
   public static GameManager Instance;
-
+    [SerializeField] private GameObject boss1;
     public float worldSpeed;
+    public int crittercount;
     private void Awake()
     {
         if(Instance == null)
@@ -18,11 +19,21 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void Start()
+    {
+        crittercount = 0;
+    }
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Cancel") || Input.GetButtonDown("Fire3") || Input.GetKeyDown(KeyCode.P))
         {
             Pause();
+        }
+        if(crittercount > 15)
+        {
+                       crittercount = 0;
+            Instantiate(boss1, new Vector3(15, 0, 0), Quaternion.Euler(0,0,-90));
         }
     }
     public void Pause()

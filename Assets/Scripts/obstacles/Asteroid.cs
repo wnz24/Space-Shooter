@@ -45,17 +45,27 @@ public class Asteroid : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Bullet")) {
-            spriteRenderer.material = Material;
-            StartCoroutine(changematerial());
-            AudioManager.Instance.PlaySound(AudioManager.Instance.hitRock);
-            lifes--;
-                        if (lifes <= 0)
-            {
-               Instantiate(DestroyEffect, transform.position, transform.rotation);
-                AudioManager.Instance.PlayModifiedSound(AudioManager.Instance.boom2);
-                Destroy(gameObject);
-            }
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Bullet"))
+        {
+            TakeDamage(1);
+        }
+        else if (collision.gameObject.CompareTag("Boss"))
+        {
+            TakeDamage(10);
+        }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        spriteRenderer.material = Material;
+        StartCoroutine(changematerial());
+        AudioManager.Instance.PlaySound(AudioManager.Instance.hitRock);
+        lifes--;
+        if (lifes <= 0)
+        {
+            Instantiate(DestroyEffect, transform.position, transform.rotation);
+            AudioManager.Instance.PlayModifiedSound(AudioManager.Instance.boom2);
+            Destroy(gameObject);
         }
     }
     IEnumerator changematerial()

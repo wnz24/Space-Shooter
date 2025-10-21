@@ -12,6 +12,9 @@ public class AudioManager : MonoBehaviour
     public AudioSource hitRock;
     public AudioSource shoot;
     public AudioSource critterhit;
+    public AudioSource critterburn;
+    public AudioSource bosscharge;
+    public AudioSource bossHit;
     private void Awake()
     {
         if (Instance == null)
